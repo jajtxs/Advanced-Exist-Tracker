@@ -1,6 +1,6 @@
 # **Event Exist Tracker**
 
-Very simple webhook for Discord, functions free with Google App Script.
+Very simple webhook for Discord, functions free with Google App Script. Was specifically made for Christmas 2024 Event, will be updated, but it is easily customizable!
 
 **Predictions**:
 
