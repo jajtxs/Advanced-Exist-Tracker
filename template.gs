@@ -9,9 +9,9 @@ function trackPets() {
   const response = UrlFetchApp.fetch(API_URL);
   const data = JSON.parse(response.getContentText()).data;
 
-  trackSpecificPets(sheet, data, "Gargantuan", BASE_IMAGE_URL + "85770840304413", WEBHOOK_URL);
-  trackSpecificPets(sheet, data, "Titanic Nutcracker Squirrel", BASE_IMAGE_URL + "72074096332299", WEBHOOK_URL);
-  trackSpecificPets(sheet, data, "Titanic Grinch Cat", BASE_IMAGE_URL + "105600589075929", WEBHOOK_URL);
+  trackSpecificPets(sheet, data, "PET 1", BASE_IMAGE_URL + "PET 1 ICON ID", WEBHOOK_URL);
+  trackSpecificPets(sheet, data, "PET 2", BASE_IMAGE_URL + "PET 2 ICON ID", WEBHOOK_URL);
+  trackSpecificPets(sheet, data, "PET 3", BASE_IMAGE_URL + "PET 3 ICON ID", WEBHOOK_URL);
 }
 
 function trackSpecificPets(sheet, data, petName, imageURL, webhookURL) {
@@ -40,7 +40,7 @@ function trackSpecificPets(sheet, data, petName, imageURL, webhookURL) {
       sheet.appendRow([petName, newTotalValue, estimatedTotal]);
     }
 
-    const payload = {
+    const payload = { // section can be edited for different rarities
       embeds: [
         {
           title: `${petName.includes("Gargantuan") ? "**New Gargantuan Hatch!**" : "**New Titanic Hatch!**"}`,
